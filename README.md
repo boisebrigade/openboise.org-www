@@ -1,8 +1,15 @@
 # boisebrigade.org-www
 Gatsby site for the Boise Brigade
 
-## Running in development
-`gatsby develop`
+## Development Setup
+
+- Clone the repo: `git clone https://github.com/boisebrigade/boisebrigade.org-www.git`
+- Install Nodejs: `# asdf is the preferred version manager`
+  - Install [asdf](https://github.com/asdf-vm/asdf#setup)
+  - Add Nodejs asdf plugin: [asdf-nodejs](https://github.com/asdf-vm/asdf-nodejs)
+  - Goto where you've cloned the repo and run: `asdf install`
+- Install dependencies: `npm install`
+- Run the dev run script: `npm run dev`
 
 
 ## License
