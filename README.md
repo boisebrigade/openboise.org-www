@@ -1,4 +1,4 @@
-# boisebrigade.org-www
+# openboise.org-www
 Gatsby site for the Boise Brigade
 
 ## Development Setup
