@@ -6,6 +6,8 @@ import Header from '../components/Header'
 import Container from '../components/Container'
 import Footer from '../components/Footer'
 
+import Wrap from '../components/Wrap'
+
 import Text from '../components/sections/Text'
 
 export default class extends React.Component {
@@ -26,19 +28,21 @@ export default class extends React.Component {
 
     return <React.Fragment>
       <Head title={metaTitle} description={metaDescription} />
-      <Header mainMenu={mainMenu} />
+      <Wrap>
+        <Header mainMenu={mainMenu} />
 
-      <Container blog={true}>
-        <article>
-          <h1 className="text-5xl font-extrabold md:whitespace-pre py-4">{title}</h1>
+        <Container blog={true}>
+          <article>
+            <h1 className="text-5xl font-extrabold md:whitespace-pre py-4">{title}</h1>
 
-          <Text content={body} />
+            <Text content={body} />
 
 
-        </article>
-      </Container>
+          </article>
+        </Container>
 
-      <Footer />
+        <Footer />
+      </Wrap>
     </React.Fragment>
   }
 }

@@ -1,4 +1,4 @@
 import React from 'react'
 
 export default props =>
-  <div>{props.children}</div>
+  <div className="flex flex-col min-h-screen">{props.children}</div>

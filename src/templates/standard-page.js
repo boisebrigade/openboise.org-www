@@ -43,39 +43,41 @@ export default class extends React.Component {
 
     return <React.Fragment>
       <Head title={metaTitle} description={metaDescription} />
-      <Header mainMenu={mainMenu} />
+      <Wrap>
+        <Header mainMenu={mainMenu} />
 
-      {content.map(({ title, showTitle, spacing, sections }, i) => {
-        const additionalClasses =
-          i === 0 ? [] :
-            (i-1) % 2 ? ['grade-rev']
-              : ['grade'];
+        {content.map(({ title, showTitle, spacing, sections }, i) => {
+          const additionalClasses =
+            i === 0 ? [] :
+              (i-1) % 2 ? ['grade-rev']
+                : ['grade'];
 
-        if (spacing.includes("Top") && spacing.includes("Bottom")) {
-          additionalClasses.push("md:py-6")
-        } else if (spacing.includes("Top")) {
-          additionalClasses.push("md:pt-6")
-        } else if (spacing.includes("Bottom")) {
-          additionalClasses.push("md:pb-6")
-        }
+          if (spacing.includes("Top") && spacing.includes("Bottom")) {
+            additionalClasses.push("md:py-6")
+          } else if (spacing.includes("Top")) {
+            additionalClasses.push("md:pt-6")
+          } else if (spacing.includes("Bottom")) {
+            additionalClasses.push("md:pb-6")
+          }
 
-        if (spacing.includes("Left") && spacing.includes("Right")) {
-          additionalClasses.push("md:px-3")
-        } else if (spacing.includes("Top")) {
-          additionalClasses.push("md:pl-3")
-        } else if (spacing.includes("Bottom")) {
-          additionalClasses.push("md:pr-3")
-        }
+          if (spacing.includes("Left") && spacing.includes("Right")) {
+            additionalClasses.push("md:px-3")
+          } else if (spacing.includes("Top")) {
+            additionalClasses.push("md:pl-3")
+          } else if (spacing.includes("Bottom")) {
+            additionalClasses.push("md:pr-3")
+          }
 
-        return <section key={i} className={`w-full h-full center bg-grey-lightest ${additionalClasses.join(" ")}`}>
-          <Container>
-            {showTitle ? <h3 className="sm:pl-8 md:pl-0 sm:py-8 text-4xl block md:py-4">{title}</h3> : null}
-            {Array.from(sections).map((sectionContent, j) => <Section key={j} {...sectionContent}/>)}
-          </Container>
-        </section>
-      })}
+          return <section key={i} className={`w-full h-full center bg-grey-lightest ${additionalClasses.join(" ")}`}>
+            <Container>
+              {showTitle ? <h3 className="sm:pl-8 md:pl-0 sm:py-8 text-4xl block md:py-4">{title}</h3> : null}
+              {Array.from(sections).map((sectionContent, j) => <Section key={j} {...sectionContent}/>)}
+            </Container>
+          </section>
+        })}
 
-      <Footer />
+        <Footer />
+      </Wrap>
     </React.Fragment>
   }
 }
