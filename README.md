@@ -1,5 +1,5 @@
 # openboise.org-www
-Gatsby site for the Boise Brigade
+Gatsby site for Open Boise
 
 ## Development Setup
 

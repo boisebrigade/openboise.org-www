@@ -4,9 +4,9 @@ require("dotenv").config()
 
 module.exports = {
   siteMetadata: {
-    title: 'Boise\'s Brigade, Idaho\'s local Code for America chapter',
+    title: "Open Boise local Code for America chapter",
     description: 'A group of civic minded hacktivists, hobbyists, and community engaged individuals',
-    siteUrl: 'boisebrigade.org',
+    siteUrl: 'openboise.org',
   },
   plugins: [
     {
