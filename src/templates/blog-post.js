@@ -1,31 +1,66 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 
-import Layout from '../components/Layout'
+import Head from '../components/Head'
+import Header from '../components/Header'
+import Container from '../components/Container'
+import Footer from '../components/Footer'
 
-class BlogPostTemplate extends React.Component {
+import Text from '../components/sections/Text'
+
+export default class extends React.Component {
   render() {
-    const { previous, next } = this.props.pageContext
+    const { data } = this.props
 
-    return (
-      <Layout location={this.props.location}>
-        <Helmet
-          htmlAttributes={{ lang: 'en' }}
-        />
-      </Layout>
-    )
+    const {
+      mainMenu: {
+        links: mainMenu
+      },
+      blogPost: {
+        metaDescription: metaDescription,
+        metaTitle: metaTitle,
+        title: title,
+        body: body
+      },
+    } = data
+
+    return <React.Fragment>
+      <Head title={metaTitle} description={metaDescription} />
+      <Header mainMenu={mainMenu} />
+
+      <Container blog={true}>
+        <article>
+          <h1 className="text-5xl font-extrabold md:whitespace-pre py-4">{title}</h1>
+
+          <Text content={body} />
+
+
+        </article>
+      </Container>
+
+      <Footer />
+    </React.Fragment>
   }
 }
 
-export default BlogPostTemplate
-
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        author
+    mainMenu: contentfulMenu(menuName: {eq: "Main Menu"}) {
+      links {
+        text
+        link
+      }
+    }
+    blogPost: contentfulBlogPost(slug: { eq: $slug }) {
+      title
+      metaTitle
+      metaDescription
+      body {
+        childContentfulRichText {
+          internal {
+            content
+          }
+        }
       }
     }
   }

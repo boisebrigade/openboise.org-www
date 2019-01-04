@@ -70,3 +70,5 @@ yarn-error.log
 
 # Environment specific files
 .env
+
+static/stylesheet.css

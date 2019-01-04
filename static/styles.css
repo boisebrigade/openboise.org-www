@@ -1,0 +1,23 @@
+@tailwind preflight;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  font-family: "Source Sans Pro";
+  color: #131515;
+}
+
+.grade {
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01));
+}
+
+.grade-rev {
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.05));
+}
+
+.arrow:after {
+  display: inline-block;
+  content: '>';
+  padding-left: 0.5rem;
+  vertical-align: middle;
+}

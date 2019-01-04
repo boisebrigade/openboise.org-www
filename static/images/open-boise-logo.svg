@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="156" height="34" viewBox="0 0 156 34">
+    <g fill="#131515" fill-rule="evenodd">
+        <path d="M17 31.481c7.998 0 14.481-6.483 14.481-14.481S24.998 2.519 17 2.519 2.519 9.002 2.519 17 9.002 31.481 17 31.481zM17 34C7.611 34 0 26.389 0 17S7.611 0 17 0s17 7.611 17 17-7.611 17-17 17z"/>
+        <text font-family="SourceSansPro-SemiBold, Source Sans Pro" font-size="24" font-weight="500">
+            <tspan x="10.336" y="25">B</tspan>
+        </text>
+        <text font-family="SourceSansPro-SemiBold, Source Sans Pro" font-size="24" font-weight="500">
+            <tspan x="39" y="25">Open Boise</tspan>
+        </text>
+    </g>
+</svg>

@@ -1,5 +1,7 @@
 require("dotenv").config()
 
+
+
 module.exports = {
   siteMetadata: {
     title: 'Boise\'s Brigade, Idaho\'s local Code for America chapter',
@@ -22,6 +24,7 @@ module.exports = {
         name: 'pages',
       },
     },
-    `gatsby-plugin-react-helmet`
+    `gatsby-plugin-react-helmet`,
+    `@contentful/gatsby-transformer-contentful-richtext`,
   ],
 }

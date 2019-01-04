@@ -1,25 +1,29 @@
 {
-  "name": "boisebrigade.org-www",
-  "description": "Boise Brigade Site",
+  "name": "openboise.org-www",
+  "description": "Open Boise Site",
   "version": "1.0.0",
-  "author": "Boise Brigade",
+  "author": "Open Boise",
   "dependencies": {
+    "@contentful/gatsby-transformer-contentful-richtext": "^12.1.2",
+    "@contentful/rich-text-types": "^12.1.2",
     "dotenv": "^6.1.0",
+    "escape-html": "^1.0.3",
     "gatsby": "^2.0.19",
     "gatsby-plugin-manifest": "^2.0.5",
     "gatsby-plugin-react-helmet": "^3.0.0",
-    "gatsby-source-contentful": "^2.0.16",
+    "gatsby-source-contentful": "^2.0.19",
     "gatsby-source-filesystem": "^2.0.10",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
   },
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.11.1",
     "gh-pages": "^1.2.0",
-    "prettier": "^1.14.2"
-  }, 
+    "prettier": "^1.14.2",
+    "tailwindcss": "^0.7.3"
+  },
   "license": "MIT",
   "scripts": {
     "dev": "gatsby develop",
@@ -29,7 +33,7 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "build": "gatsby build",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
+    "build.css": "tailwind build static/styles.css -c ./tailwind.js -o static/stylesheet.css",
+    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel- eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
   }
 }
