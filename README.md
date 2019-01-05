@@ -1,4 +1,6 @@
 # openboise.org-www
+[![Build Status](https://travis-ci.org/boisebrigade/openboise.org-www.svg?branch=master)](https://travis-ci.org/boisebrigade/openboise.org-www)
+
 Gatsby site for Open Boise
 
 ## Development Setup
