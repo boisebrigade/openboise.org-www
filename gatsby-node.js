@@ -49,9 +49,14 @@ const remoteNodes = (createPage, graphql, entity, template, prefix = '/') =>
           const posts = result.data[entity].edges
           posts.forEach((post, index) => {
             const slug = post.node.slug.replace(/^\/+/g, '')
+            let pathName = `${prefix}/${slug}`
+
+            if (slug === '') {
+              pathName = '/'
+            }
 
             createPage({
-              path: `${prefix}/${slug}`,
+              path: pathName,
               component: path.resolve(`./src/templates/${template}.js`),
               context: {
                 slug: post.node.slug
