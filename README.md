@@ -11,6 +11,8 @@ Gatsby site for Open Boise
   - Add Nodejs asdf plugin: [asdf-nodejs](https://github.com/asdf-vm/asdf-nodejs)
   - Goto where you've cloned the repo and run: `asdf install`
 - Install dependencies: `npm install`
+- Copy `.env.example` to `.env`: `cp .env.example .env`
+  - Add Contentful Access Token
 - Run the dev run script: `npm run dev`
 
 
