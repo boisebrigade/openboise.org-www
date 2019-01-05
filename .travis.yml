@@ -9,5 +9,7 @@ deploy:
   secret_access_key: $AWS_SECRET_KEY
   bucket: "openboise-www"
   skip_cleanup: true
+  local_dir: public
+  acl: public_read
   on:
     branch: master
