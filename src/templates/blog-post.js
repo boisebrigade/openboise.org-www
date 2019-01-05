@@ -10,6 +10,8 @@ import Wrap from '../components/Wrap'
 
 import Text from '../components/sections/Text'
 
+import '../../styles/styles.css'
+
 export default class extends React.Component {
   render() {
     const { data } = this.props

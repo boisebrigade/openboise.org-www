@@ -26,5 +26,6 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `@contentful/gatsby-transformer-contentful-richtext`,
+    `gatsby-plugin-postcss`,
   ],
 }

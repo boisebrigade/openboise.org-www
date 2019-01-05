@@ -4,6 +4,8 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 
+import '../../styles/styles.css'
+
 export default class extends React.Component {
   render() {
     const { previous, next } = this.props.pageContext

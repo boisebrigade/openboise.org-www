@@ -12,6 +12,7 @@ import Text from '../components/sections/Text'
 import MediaAndText from '../components/sections/MediaAndText'
 import View from '../components/sections/View'
 
+import '../../styles/styles.css'
 
 const Section = props => {
   switch (props.__typename) {
