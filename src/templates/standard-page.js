@@ -116,6 +116,7 @@ export const pageQuery = graphql`
               }
             }
             display
+            hideOrShow
           }
           ... on ContentfulSimpleText {
             body: text {

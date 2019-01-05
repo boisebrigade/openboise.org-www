@@ -10,6 +10,7 @@ export default class extends React.Component {
       text: text = null,
       display: display = "Text First",
       classes: classes = [],
+      hideOrShow: hideOrShow = "Show Media and Text"
     } = this.props
 
 
@@ -18,10 +19,10 @@ export default class extends React.Component {
     }
 
     return <div className={`flex sm:flex-col lg:flex-row h-full ${classes.join(" ")}`}>
-      <div className="flex flex-col lg:w-1/2 justify-center sm:px-8 md:px-0">
+      <div className={`md:flex flex-col lg:w-1/2 justify-center sm:px-8 md:px-0 ${hideOrShow === "Hide Text" ? "sm:hidden": "sm:flex"}`}>
         <Text content={text}/>
       </div>
-      <div className="flex flex-col lg:w-1/2">
+      <div className={`md:flex flex-col lg:w-1/2 ${hideOrShow === "Hide Media" ? "sm:hidden": "sm:flex"}`}>
         <Media {...media}/>
       </div>
     </div>
