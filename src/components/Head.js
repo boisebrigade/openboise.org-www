@@ -14,7 +14,7 @@ export default class extends React.Component {
         title={title}
         link={[
           { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,500i,600,700,900", },
-          { rel: "icon", type: "image/png", href: "images/open-boise.png" }
+          { rel: "icon", type: "image/png", href: "/images/open-boise.png" }
         ]}
       />
   }
