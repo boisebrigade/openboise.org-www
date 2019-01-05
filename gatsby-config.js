@@ -17,13 +17,6 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
-    },
     `gatsby-plugin-react-helmet`,
     `@contentful/gatsby-transformer-contentful-richtext`,
     `gatsby-plugin-postcss`,

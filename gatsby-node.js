@@ -1,29 +1,6 @@
 const path = require('path')
 const glob = require(`glob`)
 
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const PurgeCssPlugin = require(`purgecss-webpack-plugin`)
-
-const PATHS = {
-  src: path.join(__dirname, `src`)
-}
-
-const purgeCssConfig = {
-  paths: glob.sync(`${PATHS.src}/**/*.js`, { nodir: true }),
-  extractors: [
-    {
-      // Custom extractor to allow special characters (like ":") in class names
-      // See: https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css-with-purgecss
-      extractor: class {
-        static extract(content) {
-          return content.match(/[A-Za-z0-9-_:/]+/g) || []
-        }
-      },
-      extensions: [`js`]
-    }
-  ],
-}
-
 const remoteNodes = (createPage, graphql, entity, template, prefix = '/') =>
     new Promise((resolve, reject) => {
       resolve(
@@ -74,16 +51,4 @@ exports.createPages = ({ graphql, actions }) => {
     remoteNodes(createPage, graphql, 'allContentfulProject', 'project', '/project'),
     remoteNodes(createPage, graphql, 'allContentfulStandardPage', 'standard-page'),
   ])
-}
-
-exports.onCreateWebpackConfig = ({ actions, stage }) => {
-  if (stage.includes(`develop`)) return
-
-  // Add PurgeCSS in production
-  // See: https://github.com/gatsbyjs/gatsby/issues/5778#issuecomment-402481270
-  if (stage.includes(`build`)) {
-    actions.setWebpackConfig({
-      plugins: [new PurgeCssPlugin(purgeCssConfig)]
-    })
-  }
 }
