@@ -9,15 +9,12 @@ export default class extends React.Component {
       mainMenu: mainMenu = null,
     } = this.props;
 
-    return <header className="sans-serif md:h-24 bg-white sm:px-8 sm:py-4">
+    return <header className="sans-serif md:h-24 bg-white sm:px-8 sm:py-4 pt-3">
       <Container padding="">
-        <div className="flex justify-center">
-          <div className="pv-3">
-            <a className="block" href="/">
-              <img src="/images/open-boise-logo.png"
-                   srcSet="/images/open-boise-logo.png 1x, /images/open-boise-logo@2x.png 2x,/images/open-boise-logo@3x.png 3x" />
-            </a>
-          </div>
+        <div className="flex justify-center items-center	">
+          <a className="block" href="/">
+            <img className="h-10" src="/images/open-boise.svg" />
+          </a>
 
           <div className="ml-auto mv-0">
             <div className="sm:block md:hidden">
