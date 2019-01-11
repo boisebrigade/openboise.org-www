@@ -1,15 +1,43 @@
 import React from 'react'
-import Layout from '../components/Layout'
+import { graphql } from 'gatsby'
 
-class NotFoundPage extends React.Component {
+import '../../styles/styles.css'
+
+import Head from '../components/Head'
+import Wrap from '../components/Wrap'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+
+export default class extends React.Component {
   render() {
+    const { data } = this.props
+
+    const {
+      mainMenu: {
+        links: mainMenu
+      },
+    } = data
+
     return (
-      <Layout location={this.props.location}>
-        <h1>Not Found</h1>
-        <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-      </Layout>
+      <React.Fragment>
+        <Head title="Page Not Found" />
+        <Wrap>
+          <Header mainMenu={mainMenu} />
+          <Footer />
+        </Wrap>
+      </React.Fragment>
     )
   }
 }
 
-export default NotFoundPage
+
+export const pageQuery = graphql`
+  query FourOFourPage {
+    mainMenu: contentfulMenu(menuName: {eq: "Main Menu"}) {
+      links {
+        text
+        link
+      }
+    }
+  }
+`

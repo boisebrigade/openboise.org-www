@@ -1,27 +1,49 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
-
-import Layout from '../components/Layout'
 
 import '../../styles/styles.css'
 
+import Head from '../components/Head'
+import Wrap from '../components/Wrap'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+
 export default class extends React.Component {
   render() {
-    const { previous, next } = this.props.pageContext
+    const { data } = this.props
+
+    const {
+      mainMenu: {
+        links: mainMenu
+      },
+      project: {
+        metaDescription: metaDescription,
+        metaTitle: metaTitle,
+        title: title,
+      }
+    } = data
+
     return (
-      <Layout location={this.props.location}>
-        <Helmet
-          htmlAttributes={{ lang: 'en' }}
-        />
-      </Layout>
+      <React.Fragment>
+        <Head title={metaTitle} description={metaDescription} />
+        <Wrap>
+          <Header mainMenu={mainMenu} />
+          <Footer />
+        </Wrap>
+      </React.Fragment>
     )
   }
 }
 
 export const pageQuery = graphql`
   query ProjectBySlug($slug: String!) {
-    contentfulProject(slug: {eq: $slug}) {
+    mainMenu: contentfulMenu(menuName: {eq: "Main Menu"}) {
+      links {
+        text
+        link
+      }
+    }
+    project: contentfulProject(slug: {eq: $slug}) {
       title
       metaTitle
       metaDescription
