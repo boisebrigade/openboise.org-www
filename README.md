@@ -12,7 +12,7 @@ Gatsby site for Open Boise
   - Goto where you've cloned the repo and run: `asdf install`
 - Install dependencies: `npm install`
 - Copy `.env.example` to `.env`: `cp .env.example .env`
-  - Add Contentful Access Token
+  - Add Contentful Access Token and Space ID
 - Run the dev run script: `npm run dev`
 
 
