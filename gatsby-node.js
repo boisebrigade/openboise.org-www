@@ -9,7 +9,6 @@ const remoteNodes = (createPage, graphql, entity, template, prefix = '/') =>
             ${entity} {
               edges {
                 node {
-                  title
                   slug
                 }
               }
@@ -50,5 +49,14 @@ exports.createPages = ({ graphql, actions }) => {
     remoteNodes(createPage, graphql, 'allContentfulBlogPost', 'blog-post', '/blog'),
     remoteNodes(createPage, graphql, 'allContentfulProject', 'project', '/project'),
     remoteNodes(createPage, graphql, 'allContentfulStandardPage', 'standard-page'),
+    createPage({
+      path: '/blog-posts',
+      component: path.resolve(`./src/pages/blog-posts.js`),
+    }),
+    createPage({
+      path: '/projects',
+      component: path.resolve(`./src/pages/projects.js`),
+    })
+
   ])
 }
