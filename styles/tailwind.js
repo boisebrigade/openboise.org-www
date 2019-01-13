@@ -50,6 +50,8 @@ let colors = {
   'charcoal': '#131515',
   'white': '#ffffff',
 
+  'light-grey': '#f7f7f9',
+
   'topaz': '#14a7b2',
   'dark-grey-blue': '#38686a',
   'darkish-blue': '#064789',
