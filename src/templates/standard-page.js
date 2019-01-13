@@ -47,7 +47,7 @@ export default class extends React.Component {
       <Wrap>
         <Header mainMenu={mainMenu} />
 
-        {content.map(({ title, showTitle, spacing, sections }, i) => {
+        {content ? content.map(({ title, showTitle, spacing, sections }, i) => {
           const additionalClasses =
             i === 0 ? [] :
               (i-1) % 2 ? ['grade-rev']
@@ -75,7 +75,7 @@ export default class extends React.Component {
               {Array.from(sections).map((sectionContent, j) => <Section key={j} {...sectionContent}/>)}
             </Container>
           </section>
-        })}
+        }): null}
 
         <Footer />
       </Wrap>
