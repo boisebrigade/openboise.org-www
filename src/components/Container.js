@@ -6,12 +6,12 @@ export default props => {
     padding: padding = 'md:px-16'
   } = props
 
-  let maxWidth = 'max-w-4xl'
+  let additionalClasses = 'max-w-4xl'
   if (blog) {
-    maxWidth = 'max-w-xl'
+    additionalClasses = 'max-w-xl'
   }
 
-  return <div className={`flex flex-col justify-center ${maxWidth} center h-full flex flex-col mx-auto ${padding}`}>
+  return <div className={`flex flex-col justify-center ${additionalClasses} center h-full flex flex-col mx-auto ${padding}`}>
     {props.children}
   </div>
 }
