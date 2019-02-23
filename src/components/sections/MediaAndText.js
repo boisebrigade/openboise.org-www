@@ -19,7 +19,7 @@ export default class extends React.Component {
     }
 
     return <div className={`flex sm:flex-col lg:flex-row h-full ${classes.join(" ")}`}>
-      <div className={`md:flex flex-col lg:w-1/2 justify-center sm:px-8 md:px-0 ${hideOrShow === "Hide Text" ? "sm:hidden": "sm:flex"}`}>
+      <div className={`md:flex flex-col lg:w-1/2 justify-center sm:px-8 sm:py-4 md:px-0 ${hideOrShow === "Hide Text" ? "sm:hidden": "sm:flex"}`}>
         <Text content={text}/>
       </div>
       <div className={`md:flex flex-col lg:w-1/2 ${hideOrShow === "Hide Media" ? "sm:hidden": "sm:flex"}`}>
