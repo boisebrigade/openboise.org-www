@@ -11,10 +11,14 @@ export default class extends React.Component {
       color: color = "bg-topaz"
     } = this.props
 
-    const path = slug.replace(/^\/+/g, '')
+    let path = slug.replace(/^\/+/g, '')
+
+    if (path.indexOf('/') === 0) {
+      path = `/project/${path}`
+    }
 
     return <div className={`${classes}`}>
-      <a className={`no-underline text-white shadow ${color} block py-8 sm:px-8 md:px-16 h-full flex flex-col`} href={`/project/${path}`}>
+      <a className={`no-underline text-white shadow ${color} block py-8 sm:px-8 md:px-16 h-full flex flex-col`} href={path}>
         <h4 className="text-3xl font-bold pt-8 pb-4 block">{title}</h4>
         <div className="xl:w-128">
           <Text content={teaser}/>
