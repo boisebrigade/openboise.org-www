@@ -13,7 +13,7 @@ export default class extends React.Component {
           <div className="ml-auto">
             <ul className="list-reset">
               <li className="inline-block ml-3">
-                <a target="_blank" href="https://www.meetup.com/boisebrigade/">
+                <a target="_blank" href="https://www.meetup.com/openboise/">
                   <img src="/images/social/meetup.svg" />
                 </a>
               </li>
@@ -39,9 +39,3 @@ export default class extends React.Component {
     </footer>
   }
 }
-
-
-
-
-
-
