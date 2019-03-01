@@ -53,19 +53,10 @@ export default class extends React.Component {
       view: views = []
     } = this.props
 
-    let url = "/projects"
-    let term = "Projects"
-
-    if (typename === 'ContentfulBlogPost') {
-      url = "/blog-posts"
-      term = "Blog Posts"
-    }
-
     return <div className="flex sm:flex-col md:flex-row md:flex-wrap">
       {views.map((props, i) => {
         return <View key={i} index={i} {...props} />
       })}
-      <a className="sm:pl-8 md:pl-0 text-xl text-grapefruit font-bold leading-tight no-underline my-4 block arrow" href={url}>All {term}</a>
     </div>
   }
 }
