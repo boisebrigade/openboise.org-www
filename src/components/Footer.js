@@ -18,12 +18,12 @@ export default class extends React.Component {
                 </a>
               </li>
               <li className="inline-block ml-3">
-                <a target="_blank" href="https://twitter.com/boisebrigade">
+                <a target="_blank" href="https://twitter.com/open_boise">
                   <img src="/images/social/twitter.svg" />
                 </a>
               </li>
               <li className="inline-block ml-3">
-                <a target="_blank" href="https://www.instagram.com/boisebrigade/">
+                <a target="_blank" href="https://www.instagram.com/openboise">
                   <img src="/images/social/instagram.svg" />
                 </a>
               </li>
