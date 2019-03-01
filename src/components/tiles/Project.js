@@ -12,13 +12,15 @@ export default class extends React.Component {
     } = this.props
 
     let path = slug.replace(/^\/+/g, '')
+    let external = true
 
     if (path.indexOf('/') === 0) {
       path = `/project/${path}`
+      external = false
     }
 
     return <div className={`${classes}`}>
-      <a className={`no-underline text-white shadow ${color} block py-8 sm:px-8 md:px-16 h-full flex flex-col`} href={path}>
+      <a className={`no-underline text-white shadow ${color} block py-8 sm:px-8 md:px-16 h-full flex flex-col`} href={path} target={external ? "_blank" : "_self"}>
         <h4 className="text-3xl font-bold pt-8 pb-4 block">{title}</h4>
         <Text content={teaser}/>
         <h5 className="text-xl font-bold py-4 block arrow md:mt-auto xl:mt-0">Read More About The Project</h5>
