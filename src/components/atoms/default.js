@@ -30,5 +30,13 @@ export const blocks = {
   [INLINES.ASSET_HYPERLINK]: node => defaultInline(INLINES.ASSET_HYPERLINK, node),
   [INLINES.ENTRY_HYPERLINK]: node => defaultInline(INLINES.ENTRY_HYPERLINK, node),
   [INLINES.EMBEDDED_ENTRY]: node => defaultInline(INLINES.EMBEDDED_ENTRY, node),
-  [INLINES.HYPERLINK]: (node, next) => <a className="text-xl text-grapefruit font-bold leading-tight no-underline my-4 block arrow" href={node.data.uri}>{next(node.content)}</a>,
+  [INLINES.HYPERLINK]: (node, next) => {
+    let external = true
+
+    if (node.data.uri.indexOf("/") === 0) {
+      external = false
+    }
+
+    return <a className="text-xl text-grapefruit font-bold leading-tight no-underline my-4 block arrow" href={node.data.uri} target={external ? "_blank" : "_self"}>{next(node.content)}</a>
+  }
 };
