@@ -2,12 +2,12 @@ import React from 'react'
 
 const MenuItem = props =>
   <li className={`inline-block ml-5`}>
-    <a className="no-underline font-semibold text-lg text-charcoal" href={props.link}>{props.text}</a>
+    <a className="no-underline font-semibold text-lg text-charcoal" target="_blank" href={props.link}>{props.text}</a>
   </li>
 
 const MobileMenuItem = props =>
   <li className='ml-2 mt-6 cursor-pointer h-full'>
-    <a className="no-underline font-semibold text-lg text-charcoal" href={props.link}>{props.text}</a>
+    <a className="no-underline font-semibold text-lg text-charcoal" target="_blank" href={props.link}>{props.text}</a>
   </li>
 
 export default class extends React.Component {
