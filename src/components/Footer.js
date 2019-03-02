@@ -28,7 +28,7 @@ export default class extends React.Component {
                 </a>
               </li>
               <li className="inline-block ml-3">
-                <a target="_blank" href="https://boisebrigade.slack.com">
+                <a target="_blank" href="https://openboise.slack.com">
                   <img src="/images/social/slack.svg" />
                 </a>
               </li>
